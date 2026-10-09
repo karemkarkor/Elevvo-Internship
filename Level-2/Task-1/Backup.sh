@@ -1,3 +1,5 @@
+## /home/karem/scripts/backup.sh ##
+
 #!/bin/bash
 
 set -euo pipefail
