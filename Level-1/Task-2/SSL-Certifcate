@@ -23,6 +23,16 @@ Simulating renewal of an existing certificate for karemkarkor.software
 Congratulations, all simulated renewals succeeded:
   /etc/letsencrypt/live/karemkarkor.software/fullchain.pem (success)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+karem@karem:~$ sudo systemctl status certbot.timer
+● certbot.timer - Run certbot twice daily
+     Loaded: loaded (/usr/lib/systemd/system/certbot.timer; enabled; preset: enabled)
+     Active: active (waiting) since Fri 2026-10-09 13:13:03 EEST; 22min ago
+    Trigger: Sat 2026-10-10 06:08:52 EEST; 16h left
+   Triggers: ● certbot.service
+
+Oct 09 13:13:03 karem systemd[1]: Started certbot.timer - Run certbot twice daily. # The autorenewal runs tiwce a day
+
 karem@karem:~$ curl -I https://karemkarkor.software
 HTTP/1.1 200 OK
 Server: nginx
