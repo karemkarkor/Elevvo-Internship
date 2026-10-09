@@ -1,0 +1,10 @@
+karem@karem:~$ python3 scripts/log-reader.py
+"ERROR"
+
+"ERROR"
+
+"ERROR 400 bad request"
+
+3
+None
+karem@karem:~$
