@@ -1,0 +1,41 @@
+karem@karem:~$ sudo certbot certificates
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Found the following certs:
+  Certificate Name: karemkarkor.software
+    Serial Number: 53889ee6105e3c0581f83d2d80591c614ba
+    Key Type: ECDSA
+    Domains: karemkarkor.software
+    Expiry Date: 2027-01-07 09:24:45+00:00 (VALID: 89 days)
+    Certificate Path: /etc/letsencrypt/live/karemkarkor.software/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/karemkarkor.software/privkey.pem
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+karem@karem:~$ sudo certbot renew --dry-run
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/karemkarkor.software.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Simulating renewal of an existing certificate for karemkarkor.software
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Congratulations, all simulated renewals succeeded:
+  /etc/letsencrypt/live/karemkarkor.software/fullchain.pem (success)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+karem@karem:~$ curl -I https://karemkarkor.software
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 09 Oct 2026 10:34:23 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 230
+Connection: keep-alive
+
+karem@karem:~$ curl -I http://karemkarkor.software
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 09 Oct 2026 10:34:31 GMT
+Content-Type: text/html
+Content-Length: 178
+Connection: keep-alive
+Location: https://karemkarkor.software/ # Redirected the http traffic to https
