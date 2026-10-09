@@ -1,0 +1,1 @@
+0 3 * * * /home/karem/scripts/backup.sh
