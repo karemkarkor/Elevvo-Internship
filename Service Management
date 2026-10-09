@@ -1,0 +1,44 @@
+## /etc/systemd/system/web-server.service ##
+
+[Unit]
+Description=My Python HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+User=karem
+WorkingDirectory=/home/karem/web-server
+ExecStart=/usr/bin/python3 /home/karem/web-server/server.py
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+
+
+karem@karem:~$ sudo systemctl status web-server
+● web-server.service - My Python HTTP Server
+     Loaded: loaded (/etc/systemd/system/web-server.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2026-10-09 08:33:29 EEST; 1h 58min ago
+   Main PID: 1209 (python3)
+      Tasks: 1 (limit: 5436)
+     Memory: 9.0M (peak: 9.5M)
+        CPU: 1.462s
+     CGroup: /system.slice/web-server.service
+             └─1209 /usr/bin/python3 /home/karem/web-server/server.py
+
+Oct 09 10:12:37 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:12:37] code 501, message Unsupported method ('JUVH')
+Oct 09 10:12:37 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:12:37] "JUVH / HTTP/1.0" 501 -
+Oct 09 10:12:37 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:12:37] "GET / HTTP/1.0" 200 -
+Oct 09 10:12:37 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:12:37] "HEAD / HTTP/1.0" 200 -
+Oct 09 10:12:37 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:12:37] code 501, message Unsupported method ('POST')
+Oct 09 10:12:37 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:12:37] "POST / HTTP/1.0" 501 -
+Oct 09 10:12:37 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:12:37] code 501, message Unsupported method ('OPTIONS')
+Oct 09 10:12:37 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:12:37] "OPTIONS / HTTP/1.0" 501 -
+Oct 09 10:26:46 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:26:46] "GET / HTTP/1.0" 200 -
+Oct 09 10:26:57 karem python3[1209]: 127.0.0.1 - - [09/Oct/2026 10:26:57] "GET / HTTP/1.1" 200 -
+
+
+karem@karem:~$ curl http://localhost:8080
+<h1>Python Server is Running!</h1>
+
