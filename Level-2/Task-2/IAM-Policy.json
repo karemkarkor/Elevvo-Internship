@@ -16,6 +16,14 @@
                 "s3:GetObject"
             ],
             "Resource": "arn:aws:s3:::elevvo-task-4-bucket-628223674547-eu-central-1-an/Screenshot_20261023_191740.png"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+            ],
+            "Resource": "arn:aws:secretsmanager:eu-central-1:628223674547:secret:Elevvo-tsk-4-Xa0PYG"
         }
     ]
 }
