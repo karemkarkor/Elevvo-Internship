@@ -1,0 +1,43 @@
+ubuntu@ip-10-0-0-72:~$ ssh -i "my-laptop.pem" ubuntu@10.0.128.175
+Welcome to Ubuntu 26.04.1 LTS (GNU/Linux 7.0.0-1014-aws x86_64)
+
+ * Documentation:  https://docs.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Oct 26 18:43:59 UTC 2026
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   41.0% of 6.61GB   Processes:             115
+  Memory usage: 33%               Users logged in:       0
+  Swap usage:   0%                IPv4 address for ens5: 10.0.128.175
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+13 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Mon Oct 26 18:30:35 2026 from 10.0.0.72
+ubuntu@ip-10-0-128-175:~$ aws s3 ls s3://elevvo-task-4-bucket-628223674547-eu-central-1-an 
+2026-10-23 16:50:43      78100 Screenshot_20261023_191740.png
+ubuntu@ip-10-0-128-175:~$ aws secretsmanager get-secret-value --secret-id Elevvo-tsk-4
+{
+    "ARN": "arn:aws:secretsmanager:eu-central-1:628223674547:secret:Elevvo-tsk-4-Xa0PYG",
+    "Name": "Elevvo-tsk-4",
+    "VersionId": "dedaca99-9ca0-4059-b4a1-ed06a45c8a2c",
+    "SecretString": "{\"Elevvo\":\"task-4\"}",
+    "VersionStages": [
+        "AWSCURRENT"
+    ],
+    "CreatedDate": "2026-10-23T18:15:50.125000+00:00"
+}
+
