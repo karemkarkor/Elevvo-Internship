@@ -1,0 +1,7 @@
+sudo docker compose ps
+NAME                    IMAGE                COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+elevvo-task-5-api-1     elevvo-task-5-api    "docker-entrypoint.s…"   api       13 minutes ago   Up 12 minutes             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+elevvo-task-5-db-1      postgres:17-alpine   "docker-entrypoint.s…"   db        13 minutes ago   Up 13 minutes (healthy)   5432/tcp
+elevvo-task-5-redis-1   redis:7-alpine       "docker-entrypoint.s…"   redis     13 minutes ago   Up 13 minutes (healthy)   6379/tcp
+[karem@dynamic-077-010-071-074 Elevvo-Task-5]$ curl http://localhost:3000/health
+{"status":"ok"}[karem@dynamic-077-010-071-074 Elevvo-Task-5]$
