@@ -15,7 +15,7 @@
             "Action": [
                 "s3:GetObject"
             ],
-            "Resource": "arn:aws:s3:::elevvo-task-4-bucket-628223674547-eu-central-1-an/Screenshot_20261023_191740.png"
+            "Resource": "arn:aws:s3:::elevvo-task-4-bucket-628223674547-eu-central-1-an/*"
         },
         {
             "Effect": "Allow",
