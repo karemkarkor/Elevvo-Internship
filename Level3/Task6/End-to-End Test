@@ -1,0 +1,5 @@
+$ curl -X POST   "https://odkhh9fy83.execute-api.eu-central-1.amazonaws.com/Dev/register"   -H "Content-Type: application/json"   -H "x-api-key: E6iZDYIHyI1nvCvQZzYK86hlTTrRmb8q76nNGBJN"   -d '{"username":"testuser","email":"test@example.com","password":"StrongPassword123"}'
+{"message":"User registered successfully","user":{"email":"test@example.com","username":"testuser","createdAt":"2026-10-28T02:18:32.625Z"}}[karem@dynamic-077-010-071-074 Elevvo-Task-6]$ 
+[karem@dynamic-077-010-071-074 Elevvo-Task-6]$ curl -X POST   "https://odkhh9fy83.execute-api.eu-central-1.amazonaws.com/Dev/register"   -H "Content-Type: application/json"   -d '{"username":"testuser","em
+ail":"test@example.com","password":"StrongPassword123"}'
+{"message":"Forbidden"}
